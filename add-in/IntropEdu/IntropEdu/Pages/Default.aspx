@@ -104,17 +104,19 @@
                         </tr>
                     </tbody>
                 </table>--%>
-                <div style="height:15px;"></div>
+                <div style="height: 15px;"></div>
                 <div class="row">
                     <div class="col-md-3" ng-if="vm.loadingData == false" ng-repeat="eachApp in vm.appList">
                         <div class="dvHeight">
-                            <div class="text-center">
-                                <img src="{{eachApp.logoUrl}}" />
-                            </div>                            
-                            <p class="text-center">{{eachApp.name}}</p>
-                            <p>{{eachApp.description}}</p>
-                        </div>
-                        <div style="height:15px;"></div>
+                            <a href="{{vm.hostLtiPageUrl}}&appId={{eachApp.id}}" class="tileLink">
+                                <div class="text-center">
+                                    <img src="{{eachApp.logoUrl}}" />
+                                </div>
+                                <p class="text-center">{{eachApp.name}}</p>
+                                <p>{{eachApp.description}}</p>
+                                <div style="height: 15px;"></div>
+                            </a>
+                        </div>                        
                     </div>
                 </div>
 
