@@ -84,8 +84,8 @@
 
                 <h5>Showing {{vm.appList.length}} Apps</h5>
                 <div style="height: 15px;"></div>
-                <div class="row">
-                    <div class="col-md-3" ng-if="vm.loadingData == false" ng-repeat="eachApp in vm.appList">
+                <div class="row row-eq-height">                    
+                        <div class="col-md-3" ng-if="vm.loadingData == false" ng-repeat="eachApp in vm.appList">
                         <a href="{{vm.hostLtiPageUrl}}&appId={{eachApp.id}}" class="tileLink">
                         <div class="dvBorder">
                             
@@ -93,12 +93,13 @@
                                     <img src="{{eachApp.logoUrl}}" />
                                 </div>
                                 <p class="text-center">{{eachApp.name}}</p>
-                                <p>{{eachApp.description}}</p>
+                                <div style="height:100px;overflow:hidden;">{{eachApp.description}}</div>
                             
                         </div>
                             </a>
                         <div style="height: 25px;"></div>
-                    </div>
+                    </div>               
+                    
                 </div>
 
 
