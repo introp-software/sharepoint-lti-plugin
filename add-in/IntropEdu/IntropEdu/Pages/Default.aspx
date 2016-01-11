@@ -83,40 +83,21 @@
                 </a>
 
                 <h5>Showing {{vm.appList.length}} Apps</h5>
-                <%--  <table id="tblSelectedApps" class="table">
-                    <thead>
-                        <tr>
-                            <th>App Name</th>
-                            <th>App Description</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-if="vm.loadingData == true">
-                            <td colspan="2" style="text-align: center">Loading</td>
-                        </tr>
-                        <tr ng-if="vm.loadingData == false" ng-repeat="eachApp in vm.appList">
-                            <td>{{eachApp.name}}</td>
-                            <td>{{eachApp.description}}</td>
-                            <td>
-                                <a href="{{vm.hostLtiPageUrl}}&appId={{eachApp.id}}">Launch</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>--%>
                 <div style="height: 15px;"></div>
                 <div class="row">
                     <div class="col-md-3" ng-if="vm.loadingData == false" ng-repeat="eachApp in vm.appList">
-                        <div class="dvHeight">
-                            <a href="{{vm.hostLtiPageUrl}}&appId={{eachApp.id}}" class="tileLink">
+                        <a href="{{vm.hostLtiPageUrl}}&appId={{eachApp.id}}" class="tileLink">
+                        <div class="dvBorder">
+                            
                                 <div class="text-center">
                                     <img src="{{eachApp.logoUrl}}" />
                                 </div>
                                 <p class="text-center">{{eachApp.name}}</p>
                                 <p>{{eachApp.description}}</p>
-                                <div style="height: 15px;"></div>
+                            
+                        </div>
                             </a>
-                        </div>                        
+                        <div style="height: 25px;"></div>
                     </div>
                 </div>
 

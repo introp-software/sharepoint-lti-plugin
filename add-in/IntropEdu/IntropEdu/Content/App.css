@@ -1,9 +1,9 @@
 ﻿/* Place custom styles below */
-.dvHeight{
-    margin-bottom: -99999px;
-    padding-bottom: 99999px;
+.dvBorder{
+    border: solid 1px #D0D0D0 ;
     background-color:#efefef;
+    
 }
 .tileLink {
-    text-decoration:none !important;
+    text-decoration:none !important;    
 }
