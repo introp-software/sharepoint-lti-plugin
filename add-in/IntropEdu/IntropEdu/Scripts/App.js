@@ -1,4 +1,6 @@
-﻿'use strict';
+﻿/// <reference path="custom/services/common-functions.js" />
+/// <reference path="custom/services/user-permission.js" />
+'use strict';
 
 var context = SP.ClientContext.get_current();
 var user = context.get_web().get_currentUser();
@@ -17,6 +19,11 @@ function getUserName() {
 // This function is executed if the above call is successful
 // It replaces the contents of the 'message' element with the user name
 function onGetUserNameSuccess() {
+    var helper = new commons();
+
+    var permLoader = new userPermissionLoader();
+    permLoader.getPermissions(helper.getHostWebUrl(), user);
+
     $('#message').text('Hello ' + user.get_title());
 }
 

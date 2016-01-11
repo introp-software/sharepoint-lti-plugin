@@ -8,7 +8,8 @@ function LtiApplication(id,
     url,
     logoUrl,
     resourceId,
-    requiresKey) {
+    requiresKey,
+    ltiMessageType) {
 
     this.id = id;
     this.name = name;
@@ -21,9 +22,16 @@ function LtiApplication(id,
     this.logoUrl = logoUrl;
     this.resourceId = resourceId;
     this.requiresKey = requiresKey;
-
+    this.ltiMessageType = ltiMessageType;
 }
 
 LtiApplication.prototype.setMetadata = function (metadata) {
     this.metadata = metadata;
+}
+
+function UserInfo(firstName, lastName, email, role) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.role = role;
 }

@@ -16,7 +16,7 @@
   </AppPrincipal>
   <AppPermissionRequests>
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Manage" />
-    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Manage" />
-    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="Manage" />
+    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="FullControl" />
+    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="FullControl" />
   </AppPermissionRequests>
 </App>

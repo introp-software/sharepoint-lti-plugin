@@ -1,6 +1,7 @@
 ﻿/// <reference path="../services/site-app-list-manager.js" />
 /// <reference path="../../../angular.js" />
-/// <reference path="../services/site-list-mapping.js" />
+/// <reference path="../services/user-permission.js" />
+
 var app = angular.module("app", []);
 app.controller('defaultPageCtrl', ['$scope', function ($scope) {
     

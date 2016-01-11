@@ -15,6 +15,7 @@ siteAppListMgr = function () {
         "{ '__metadata': { 'type': 'SP.FieldText' }, 'FieldTypeKind': 2, 'Title': 'AppLogoUrl', 'MaxLength': '255' }",
         "{ '__metadata': { 'type': 'SP.FieldText' }, 'FieldTypeKind': 2, 'Title': 'AppResourceId', 'MaxLength': '255' }",
         "{ '__metadata': { 'type': 'SP.FieldText' }, 'FieldTypeKind': 2, 'Title': 'AppRequiresKey', 'MaxLength': '1' }",
+        "{ '__metadata': { 'type': 'SP.FieldText' }, 'FieldTypeKind': 2, 'Title': 'AppLtiMessageType', 'MaxLength': '255' }",
     ];
 
     var listItemType = "SP.Data.LTIApplicationListListItem";
@@ -170,7 +171,10 @@ siteAppListMgr = function () {
                 cb(null, err);
             } else {
                 for (var ctr = 0; ctr < items.length; ctr++) {
-                   
+                    if (items[ctr].id == itemId) {
+                        cb(items[ctr], null);
+                        return;
+                    }
                 }
             }
         });

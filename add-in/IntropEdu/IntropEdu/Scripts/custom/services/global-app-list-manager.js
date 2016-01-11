@@ -15,7 +15,8 @@ globalAppListMgr = function () {
                                 'https://www.edu-apps.org/lti_public_resources/?tool_id=youtube',
                                 'https://edu-app-center.s3.amazonaws.com/uploads/production/lti_app/banner_image/pr_youtube.png',
                                 '57092',
-                                false),
+                                false,
+                                'ContentItemSelectionRequest'),
 
              new LtiApplication('2',
                                 'Trello',
@@ -26,7 +27,8 @@ globalAppListMgr = function () {
                                 'https://www.edu-apps.org/tool_redirect?id=trello',
                                 'https://edu-app-center.s3.amazonaws.com/uploads/production/lti_app/banner_image/trello.png',
                                 '07282',
-                                false),
+                                false,
+                                'ContentItemSelectionRequest'),
 
              new LtiApplication('3',
                                 'OfficeMix',
@@ -37,7 +39,8 @@ globalAppListMgr = function () {
                                 'https://mix.office.com/lti/',
                                 'https://edu-app-center.s3.amazonaws.com/uploads/production/lti_app/banner_image/microsoft_office_mix.png',
                                 '62424',
-                                 true),
+                                 true,
+                                 'basic-lti-launch-request'),
 
             new LtiApplication('4',
                                'CustomApp',
@@ -48,7 +51,8 @@ globalAppListMgr = function () {
                                'https://provider.azurewebsites.net/Tool/32',
                                'https://edu-app-center.s3.amazonaws.com/uploads/production/lti_app/banner_image/public_resources.png',
                                '63276',
-                                true),
+                                true,
+                                'ContentItemSelectionRequest'),
 
             new LtiApplication('5',
                                'ChemVantage',
@@ -59,7 +63,8 @@ globalAppListMgr = function () {
                                'https://www.chemvantage.org/lti/',
                                'https://edu-app-center.s3.amazonaws.com/uploads/production/lti_app/banner_image/chem_vantage.png',
                                '89056',
-                                true),
+                                true,
+                                'basic-lti-launch-request'),
 
           new LtiApplication('6',
                              'KhanAcademy',
@@ -70,7 +75,8 @@ globalAppListMgr = function () {
                              'https://www.edu-apps.org/lti_public_resources/?tool_id=khan_academy',
                              'https://edu-app-center.s3.amazonaws.com/uploads/production/lti_app/banner_image/pr_khan_academy.png',
                              '90168',
-                              false),
+                              false,
+                              'basic-lti-launch-request'),
              
         ];
         cb(appList, null);

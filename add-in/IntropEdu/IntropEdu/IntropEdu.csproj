@@ -63,8 +63,11 @@
     <Content Include="Scripts\custom\controllers\lti-app-host-page-ctrl.js" />
     <Content Include="Scripts\custom\services\common-functions.js" />
     <Content Include="Scripts\custom\services\global-app-list-manager.js" />
+    <Content Include="Scripts\custom\services\lti-app-launcher.js" />
     <Content Include="Scripts\custom\services\models.js" />
+    <Content Include="Scripts\custom\services\oauth-signature.js" />
     <Content Include="Scripts\custom\services\site-app-list-manager.js" />
+    <Content Include="Scripts\custom\services\user-permission.js" />
     <Content Include="Scripts\Elements.xml" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
