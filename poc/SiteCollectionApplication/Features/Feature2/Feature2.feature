@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c117993a-fd59-4044-9096-08d376aa1e8c" featureId="c117993a-fd59-4044-9096-08d376aa1e8c" imageUrl="" solutionId="00000000-0000-0000-0000-000000000000" title="SiteCollectionApplication Feature2" version="" deploymentPath="$SharePoint.Project.FileNameWithoutExtension$_$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel" />

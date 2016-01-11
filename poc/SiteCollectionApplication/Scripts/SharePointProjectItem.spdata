@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="Scripts\" Type="ElementManifest" />
+    <ProjectItemFile Source="App.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-1.9.1.min.map" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-1.9.1.min.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-1.9.1.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="jquery-1.9.1.intellisense.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="TaskList.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="custom\new\services\global-app-list-manager.js" Target="Scripts\custom\new\services\" Type="ElementFile" />
+    <ProjectItemFile Source="custom\new\services\site-app-list-manager.js" Target="Scripts\custom\new\services\" Type="ElementFile" />
+    <ProjectItemFile Source="custom\new\services\common-functions.js" Target="Scripts\custom\new\services\" Type="ElementFile" />
+    <ProjectItemFile Source="custom\new\controllers\default-page-ctrl.js" Target="Scripts\custom\new\controllers\" Type="ElementFile" />
+    <ProjectItemFile Source="angular.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="custom\new\register-scripts.js" Target="Scripts\custom\new\" Type="ElementFile" />
+    <ProjectItemFile Source="custom\new\controllers\edit-site-list-page-ctrl.js" Target="Scripts\custom\new\controllers\" Type="ElementFile" />
+    <ProjectItemFile Source="custom\new\services\models.js" Target="Scripts\custom\new\services\" Type="ElementFile" />
+  </Files>
+</ProjectItem>
