@@ -148,6 +148,7 @@ app.controller('editSiteListCtrl', ['$scope', function ($scope) {
             changeAppListUpdateState(newVal, vm.removeAppInProgress)
         }
     });
+
     $scope.$watch('vm.removeAppInProgress', function (newVal, oldVal) {
         if (newVal == false) {
             changeAppListUpdateState(vm.addAppInProgress, newVal);
@@ -172,10 +173,16 @@ app.controller('editSiteListCtrl', ['$scope', function ($scope) {
             }
         }
 
+
         if (appsToAdd.length > 0) {
             addApp(0, appsToAdd, function (data, err) {
                 if (err) {
                     vm.err = err;
+                }
+                else {
+                    for (var i = 0; i < appsToAdd.length; i++) {
+                        appsToAdd[i].oldChecked = true;
+                    }
                 }
                 vm.addAppInProgress = false;
                 $scope.$apply();
@@ -189,6 +196,11 @@ app.controller('editSiteListCtrl', ['$scope', function ($scope) {
             removeApp(0, appsToRemove, function (data, err) {
                 if (err) {
                     vm.err = err;
+                }
+                else {
+                    for (var i = 0; i < appsToRemove.length; i++) {
+                        appsToRemove[i].oldChecked = false;
+                    }
                 }
                 vm.removeAppInProgress = false;
                 $scope.$apply();

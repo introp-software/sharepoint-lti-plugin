@@ -104,6 +104,8 @@
                         <th></th>
                         <th>App Name</th>
                         <th>App Description</th>
+                        <th>Consumer Key</th>
+                        <th>Consumer Secret</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -116,6 +118,12 @@
                         </td>
                         <td>{{eachApp.name}}</td>
                         <td>{{eachApp.description}}</td>
+                        <td>
+                            <input type="text" ng-model="eachApp.consumerKey" />
+                        </td>
+                        <td>
+                            <input type="text" ng-model="eachApp.consumerSecret" />
+                        </td>
                     </tr>
                 </tbody>
             </table>

@@ -92,6 +92,7 @@ siteAppListMgr = function () {
                 "If-Match": app.metadata.__metadata.etag
             },
             success: function (data, textStatus, jqXHR) {
+                app.setMetadata(null);
                 cb(app, null);
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -132,7 +133,7 @@ siteAppListMgr = function () {
                 "X-RequestDigest": $("#__REQUESTDIGEST").val()
             },
             success: function (data, textStatus, jqXHR) {
-                app.setMetadata(data);
+                app.setMetadata(data.d);
                 cb(app, null);
             },
             error: function (jqXHR, textStatus, errorThrown) {
