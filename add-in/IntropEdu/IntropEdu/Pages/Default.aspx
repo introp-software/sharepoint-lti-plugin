@@ -82,8 +82,8 @@
                     style="text-shadow: none;">Edit App List &nbsp; <i class="fa fa-cog"></i>
                 </a>
 
-                <h1>Application List</h1>
-                <table id="tblSelectedApps" class="table">
+                <h5>Showing {{vm.appList.length}} Apps</h5>
+                <%--  <table id="tblSelectedApps" class="table">
                     <thead>
                         <tr>
                             <th>App Name</th>
@@ -103,7 +103,20 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>
+                </table>--%>
+                <div style="height:15px;"></div>
+                <div class="row">
+                    <div class="col-md-3" ng-if="vm.loadingData == false" ng-repeat="eachApp in vm.appList">
+                        <div class="dvHeight">
+                            <div class="text-center">
+                                <img src="{{eachApp.logoUrl}}" />
+                            </div>                            
+                            <p class="text-center">{{eachApp.name}}</p>
+                            <p>{{eachApp.description}}</p>
+                        </div>
+                        <div style="height:15px;"></div>
+                    </div>
+                </div>
 
 
             </div>
