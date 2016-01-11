@@ -78,6 +78,7 @@
                 <a id="lnkEditAppList"
                     href="{{vm.editPageUrl}}"
                     class="btn btn-warning pull-right"
+                    ng-show="vm.hasEditPermission"
                     style="text-shadow: none;">Edit App List &nbsp; <i class="fa fa-cog"></i>
                 </a>
 

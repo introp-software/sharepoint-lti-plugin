@@ -113,7 +113,8 @@ siteAppListMgr = function () {
 			"AppLaunchUrl": app.url,
 			"AppLogoUrl": app.logoUrl,
 			"AppResourceId": app.resourceId,
-			"AppRequiresKey": app.requiresKey == false ? "0" : "1"
+			"AppRequiresKey": app.requiresKey == false ? "0" : "1",
+			"AppLtiMessageType": app.ltiMessageType
         };
 
         var apiEndPoint = appWebUrl +
@@ -209,7 +210,8 @@ siteAppListMgr = function () {
 							items[ctr].AppLaunchUrl,
 							items[ctr].AppLogoUrl,
 							items[ctr].AppResourceId,
-							items[ctr].AppRequiresKey == "0" ? false : true);
+							items[ctr].AppRequiresKey == "0" ? false : true,
+                            items[ctr].AppLtiMessageType);
                         app.setMetadata(items[ctr]);
                         apps.push(app);
                     }

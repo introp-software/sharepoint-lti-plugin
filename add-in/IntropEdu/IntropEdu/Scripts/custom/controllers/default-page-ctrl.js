@@ -15,6 +15,7 @@ app.controller('defaultPageCtrl', ['$scope', function ($scope) {
     $scope.vm.loadingData = true;
     $scope.vm.err = "";
     $scope.vm.hostLtiPageUrl = "";
+    $scope.vm.hasEditPermission = false;
 
     $scope.fn = {};
 
@@ -44,6 +45,23 @@ app.controller('defaultPageCtrl', ['$scope', function ($scope) {
         vm.loadingData = false;
         $scope.$apply();
     });
+
+    $(document).on("userInfoLoaded", function (event, data) {
+        $scope.fn.determineUserPermission(data.userInfo);
+    });
+
+    $scope.fn.determineUserPermission = function (userInfo) {
+        var permLoader = new userPermissionLoader();
+        permLoader.hasManagePermission(hostWebUrl, user, function (hasPerm, err) {
+            if (err) {
+                $scope.vm.hasEditPermission = false;
+            }
+            else {
+                $scope.vm.hasEditPermission = hasPerm;
+            }
+            $scope.$apply();
+        });
+    }
 
 }]);
 

@@ -6,7 +6,7 @@ userPermissionLoader = function () {
     var helper = new commons();
     var appWebUrl = helper.getAppWebUrl();
 
-    var get = function (siteUrl, user) {
+    var hasManagePermission = function (siteUrl, user, cb) {
 
         var apiUrl = appWebUrl +
             "/_api/SP.AppContextSite(@target)/web/getUserEffectivePermissions(@username)?@target='" +
@@ -18,32 +18,25 @@ userPermissionLoader = function () {
             url: apiUrl,
             type: "GET",
             headers: {
-                accept: "application/json",
+                accept: "application/json; odata=verbose",
                 "X-RequestDigest": jQuery("#__REQUESTDIGEST").val()
             },
             success: function (data, textStatus, jqXHR) {
                 var permissions = new SP.BasePermissions();
-                permissions.initPropertiesFromJson(JSON.stringify(data));
-                var permLevels = [];
-                for (var permLevelName in SP.PermissionKind.prototype) {
-                    if (SP.PermissionKind.hasOwnProperty(permLevelName)) {
-                        var permLevel = SP.PermissionKind.parse(permLevelName);
-                        if (permissions.has(permLevel)) {
-                            permLevels.push(permLevelName);
-                        }
-                    }
-                }
-                var k = 0;
+                permissions.fromJson(data.d.GetUserEffectivePermissions);
+                var hasPermission = permissions.has(SP.PermissionKind.manageWeb);
+                cb(hasPermission, false);
+                
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                var j = 0;
+                cb(null, jqXHR);
             }
         });
 
     }
 
     return {
-        getPermissions: get
+        hasManagePermission: hasManagePermission
     }
 
 }
