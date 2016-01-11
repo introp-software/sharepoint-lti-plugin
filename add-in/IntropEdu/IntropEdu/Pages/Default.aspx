@@ -55,7 +55,7 @@
         <div ng-app="app">
             <div ng-controller="defaultPageCtrl">
 
-                <div class="panel panel-primary">
+                <%--<div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Application Details</h3>
                     </div>
@@ -73,7 +73,7 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div>--%>
 
                 <a id="lnkEditAppList"
                     href="{{vm.editPageUrl}}"
