@@ -4,6 +4,12 @@
     background-color:#efefef;
     padding:8px;
 }
-.tileLink {
-    text-decoration:none !important;    
+
+.tileLink,
+.tileLink:hover,
+.tileLink:visited,
+.tileLink:active
+{
+    text-decoration:none !important;
+    color:black;
 }
