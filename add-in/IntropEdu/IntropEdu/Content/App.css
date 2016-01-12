@@ -1,15 +1,43 @@
 ﻿/* Place custom styles below */
 .dvBorder{
-    border: solid 1px #E0E0E0  ;
-    background-color:#efefef;
-    padding:8px;
+    
 }
 
 .tileLink,
 .tileLink:hover,
 .tileLink:visited,
-.tileLink:active
+.tileLink:active,
+.tileLink:focus
 {
     text-decoration:none !important;
-    color:black;
+    outline:none;
+    color:#333333;
+} 
+
+.appTile {
+   border: solid 1px #E0E0E0;
+   border-radius:4px;
+   cursor:pointer;
+   color:#333333;
+   padding:5px;
+   margin:0 auto;
 }
+
+    .appTile .appName {
+        text-align:center;
+        font-size:17px;
+        height:50px;
+        line-height:50px;
+        border:1px solid #E0E0E0;
+        border-right:none;
+        border-left:none;
+    }
+
+    .appTile .appDescription {
+        text-align:left;
+        font-size:15px;
+        height:158px;
+        letter-spacing:1px;
+        overflow:hidden;
+        padding:10px;
+    }

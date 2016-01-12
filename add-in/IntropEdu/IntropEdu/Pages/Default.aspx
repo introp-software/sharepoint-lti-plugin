@@ -39,37 +39,43 @@
 
 <%-- The markup in the following Content element will be placed in the TitleArea of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server">
-    Introp Edu
 </asp:Content>
 
 <%-- The markup and script in the following Content element will be placed in the <body> of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
 
-    <div class="container">
+    <div style="margin-top: 25px;">
         <div ng-app="app">
             <div ng-controller="defaultPageCtrl">
 
-                <a id="lnkEditAppList"
-                    href="{{vm.editPageUrl}}"
-                    class="btn btn-warning pull-right"
-                    ng-show="vm.hasEditPermission"
-                    style="text-shadow: none;">Edit App List &nbsp; <i class="fa fa-cog"></i>
-                </a>
+                <div ng-show="vm.hasEditPermission" 
+                     style="border-bottom:1px solid #E3E3E3;padding:0 0 5px 0">
+                    <a id="lnkEditAppList"
+                        href="{{vm.editPageUrl}}"
+                        class="btn btn-warning"
+                        style="text-shadow: none;">Edit App List &nbsp; <i class="fa fa-cog"></i>
+                    </a>
+                </div>
 
                 <h5>Showing {{vm.appList.length}} Apps</h5>
-                <div style="height: 15px;"></div>
+               
                 <div class="row row-eq-height">
-                    <div class="col-md-3" ng-if="vm.loadingData == false" ng-repeat="eachApp in vm.appList">
-                        <a href="{{vm.hostLtiPageUrl}}&appId={{eachApp.id}}" class="tileLink">
-                            <div class="dvBorder">
+                    <div class="col-md-2 col-sm-12 "
+                        ng-if="vm.loadingData == false"
+                        ng-repeat="eachApp in vm.appList">
+                        <div style="width:95%;" class="appTile">
+                            <a class="tileLink" href="{{vm.hostLtiPageUrl}}&appId={{eachApp.id}}">
                                 <div class="text-center">
                                     <img src="{{eachApp.logoUrl}}" />
                                 </div>
-                                <p class="text-center">{{eachApp.name}}</p>
-                                <div style="height: 100px; overflow: hidden;">{{eachApp.description}}</div>
-                            </div>
-                        </a>
-                        <div style="height: 25px;"></div>
+                                <div class="appName">
+                                    {{eachApp.name}}
+                                </div>
+                                
+                                <div class="appDescription">{{eachApp.description}}</div>
+                            </a>
+                        </div>
+
                     </div>
 
                 </div>

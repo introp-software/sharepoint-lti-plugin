@@ -63,6 +63,10 @@ app.controller('defaultPageCtrl', ['$scope', function ($scope) {
         });
     }
 
+    $scope.fn.launchApp = function (url) {
+        window.location = url;
+    }
+
 }]);
 
 
