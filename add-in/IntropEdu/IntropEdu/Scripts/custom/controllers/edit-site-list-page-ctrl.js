@@ -109,18 +109,38 @@ app.controller('editSiteListCtrl', ['$scope', function ($scope) {
         vm.appList = bindableAppList;
     }
 
-    function addApp(index, appsToAdd, cb) {
-        siteListMgr.addApp(hostWebUrl, appsToAdd[index], function (app, err) {
-            if (err) {
-                cb(null, err);
-                return;
-            }
-            if (++index < appsToAdd.length) {
-                addApp(index, appsToAdd, cb);
-            } else {
-                cb(true, null);
-            };
-        });
+    function upsertApp(index, appsToAdd, cb) {
+        var app = appsToAdd[index];
+
+        //Existing app
+        if (app.metadata) {
+            siteListMgr.updateApp(hostWebUrl, appsToAdd[index], function (app, err) {
+                if (err) {
+                    cb(null, err);
+                    return;
+                }
+                if (++index < appsToAdd.length) {
+                    upsertApp(index, appsToAdd, cb);
+                } else {
+                    cb(true, null);
+                };
+            });
+        }
+        //New app
+        else {
+            siteListMgr.addApp(hostWebUrl, appsToAdd[index], function (app, err) {
+                if (err) {
+                    cb(null, err);
+                    return;
+                }
+                if (++index < appsToAdd.length) {
+                    upsertApp(index, appsToAdd, cb);
+                } else {
+                    cb(true, null);
+                };
+            });
+        }
+        
     }
 
     function removeApp(index, appsToRemove, cb) {
@@ -156,10 +176,6 @@ app.controller('editSiteListCtrl', ['$scope', function ($scope) {
     });
 
     fn.updateAppList = function () {
-        vm.addAppInProgress = true;
-        vm.removeAppInProgress = true;
-        vm.updatingList = true;
-
         var appsToRemove = [];
         var appsToAdd = [];
 
@@ -168,14 +184,21 @@ app.controller('editSiteListCtrl', ['$scope', function ($scope) {
             if (currentApp.oldChecked == true && currentApp.newChecked == false) {
                 appsToRemove.push(currentApp);
             }
-            else if (currentApp.oldChecked == false && currentApp.newChecked == true) {
+            else if (currentApp.newChecked == true) {
                 appsToAdd.push(currentApp);
             }
         }
 
+        if (appsToAdd.length == 0 && appsToRemove.length == 0) {
+            return;
+        }
+
+        vm.addAppInProgress = true;
+        vm.removeAppInProgress = true;
+        vm.updatingList = true;
 
         if (appsToAdd.length > 0) {
-            addApp(0, appsToAdd, function (data, err) {
+            upsertApp(0, appsToAdd, function (data, err) {
                 if (err) {
                     vm.err = err;
                 }

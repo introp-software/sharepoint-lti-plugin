@@ -19,4 +19,7 @@
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="FullControl" />
     <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="FullControl" />
   </AppPermissionRequests>
+  <RemoteEndpoints>
+    <RemoteEndpoint Url="https://intropedustg.blob.core.windows.net/lti-app-catalog/lti-app-catalog.json" />
+  </RemoteEndpoints>
 </App>

@@ -102,6 +102,7 @@
                 <thead>
                     <tr>
                         <th></th>
+                        <th></th>
                         <th>App Name</th>
                         <th>App Description</th>
                         <th>Consumer Key</th>
@@ -113,6 +114,12 @@
                         <td colspan="3" style="text-align: center">Loading</td>
                     </tr>
                     <tr ng-if="vm.loadingData == false" ng-repeat="eachApp in vm.appList">
+                        <td>
+                            <i class="fa fa-key fa-2" 
+                                style="color:darkgreen;cursor:pointer" 
+                                ng-if="eachApp.requiresKey == true"
+                                title="This tool requires consumer key and secret"></i>
+                        </td>
                         <td>
                             <input type="checkbox" ng-model="eachApp.newChecked" />
                         </td>

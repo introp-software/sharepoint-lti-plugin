@@ -142,6 +142,49 @@ siteAppListMgr = function () {
         });
     }
 
+    var updateApp = function (siteUrl, app, cb) {
+
+        var appId = app.metadata.ID;
+        var item = {
+            "__metadata": { "type": listItemType },
+            "AppName": app.name,
+            "AppDescription": app.description,
+            "AppId": app.id,
+            "AppPresentationTarget": app.launchPresentationDocumentTarget,
+            "AppKey": app.consumerKey,
+            "AppSecret": app.consumerSecret,
+            "AppLaunchUrl": app.url,
+            "AppLogoUrl": app.logoUrl,
+            "AppResourceId": app.resourceId,
+            "AppRequiresKey": app.requiresKey == false ? "0" : "1",
+            "AppLtiMessageType": app.ltiMessageType
+        };
+
+        var apiEndPoint = appWebUrl +
+                "/_api/SP.AppContextSite(@target)/web/lists/getbytitle('" +
+                listName + "')/items(" + appId + ")?@target='"
+                + siteUrl + "'";
+
+        $.ajax({
+            url: apiEndPoint,
+            type: "POST",
+            contentType: "application/json;odata=verbose",
+            data: JSON.stringify(item),
+            headers: {
+                "Accept": "application/json;odata=verbose",
+                "X-RequestDigest": $("#__REQUESTDIGEST").val(),
+                "X-HTTP-Method": "MERGE",
+                "If-Match": "*"
+            },
+            success: function (data, textStatus, jqXHR) {
+                cb(app, null);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                cb(app, jqXHR);
+            }
+        });
+    }
+
     var create = function (siteUrl, cb) {
         var helper = new commons();
         var listTitle = helper.getAppListName();
@@ -230,7 +273,8 @@ siteAppListMgr = function () {
         getItems: getItems,
         getItemById: getItemById,
         addApp: addApp,
-        removeApp: removeApp
+        removeApp: removeApp,
+        updateApp: updateApp
     };
 
 }

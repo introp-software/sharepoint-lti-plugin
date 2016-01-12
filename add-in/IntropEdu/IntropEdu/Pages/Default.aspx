@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../Scripts/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
     <script type="text/javascript" src="/_layouts/15/sp.js"></script>
+    <script type="text/javascript" src="/_layouts/SP.RequestExecutor.js"></script>
     <meta name="WebPartPageExpansion" content="full" />
 
     <!-- Add your CSS styles to the following file -->
@@ -44,36 +45,9 @@
 <%-- The markup and script in the following Content element will be placed in the <body> of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
 
-    <div>
-        <p id="message">
-            <!-- The following content will be replaced with the user name when you run the app - see App.js -->
-            initializing...
-        </p>
-    </div>
-
     <div class="container">
         <div ng-app="app">
             <div ng-controller="defaultPageCtrl">
-
-                <%--<div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Application Details</h3>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td>App Web</td>
-                                    <td>{{vm.appWebUrl}}</td>
-                                </tr>
-                                <tr>
-                                    <td>Host Web</td>
-                                    <td>{{vm.hostWebUrl}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>--%>
 
                 <a id="lnkEditAppList"
                     href="{{vm.editPageUrl}}"
@@ -84,22 +58,20 @@
 
                 <h5>Showing {{vm.appList.length}} Apps</h5>
                 <div style="height: 15px;"></div>
-                <div class="row row-eq-height">                    
-                        <div class="col-md-3" ng-if="vm.loadingData == false" ng-repeat="eachApp in vm.appList">
+                <div class="row row-eq-height">
+                    <div class="col-md-3" ng-if="vm.loadingData == false" ng-repeat="eachApp in vm.appList">
                         <a href="{{vm.hostLtiPageUrl}}&appId={{eachApp.id}}" class="tileLink">
-                        <div class="dvBorder">
-                            
+                            <div class="dvBorder">
                                 <div class="text-center">
                                     <img src="{{eachApp.logoUrl}}" />
                                 </div>
                                 <p class="text-center">{{eachApp.name}}</p>
-                                <div style="height:100px;overflow:hidden;">{{eachApp.description}}</div>
-                            
-                        </div>
-                            </a>
+                                <div style="height: 100px; overflow: hidden;">{{eachApp.description}}</div>
+                            </div>
+                        </a>
                         <div style="height: 25px;"></div>
-                    </div>               
-                    
+                    </div>
+
                 </div>
 
 

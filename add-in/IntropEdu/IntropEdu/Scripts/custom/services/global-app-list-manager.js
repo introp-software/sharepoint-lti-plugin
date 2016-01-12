@@ -1,85 +1,60 @@
 ﻿/// <reference path="models.js" />
-
+/// <reference path="common-functions.js" />
 var globalAppListMgr = window.globalAppListMgr || {};
 
 globalAppListMgr = function () {
 
     getAll = function (cb) {
-        var appList = [
-             new LtiApplication('1',
-                                'YouTube',
-                                '',
-                                'iFrame',
-                                '',
-                                '',
-                                'https://www.edu-apps.org/lti_public_resources/?tool_id=youtube',
-                                'https://edu-app-center.s3.amazonaws.com/uploads/production/lti_app/banner_image/pr_youtube.png',
-                                '57092',
-                                false,
-                                'ContentItemSelectionRequest'),
 
-             new LtiApplication('2',
-                                'Trello',
-                                '',
-                                'iFrame',
-                                '',
-                                '',
-                                'https://www.edu-apps.org/tool_redirect?id=trello',
-                                'https://edu-app-center.s3.amazonaws.com/uploads/production/lti_app/banner_image/trello.png',
-                                '07282',
-                                false,
-                                'ContentItemSelectionRequest'),
-
-             new LtiApplication('3',
-                                'OfficeMix',
-                                '',
-                                'iFrame',
-                                '',
-                                '',
-                                'https://mix.office.com/lti/',
-                                'https://edu-app-center.s3.amazonaws.com/uploads/production/lti_app/banner_image/microsoft_office_mix.png',
-                                '62424',
-                                 true,
-                                 'basic-lti-launch-request'),
-
-            new LtiApplication('4',
-                               'CustomApp',
-                               '',
-                               'iFrame',
-                               '',
-                               '',
-                               'https://provider.azurewebsites.net/Tool/32',
-                               'https://edu-app-center.s3.amazonaws.com/uploads/production/lti_app/banner_image/public_resources.png',
-                               '63276',
-                                true,
-                                'ContentItemSelectionRequest'),
-
-            new LtiApplication('5',
-                               'ChemVantage',
-                               '',
-                               'iFrame',
-                               '',
-                               '',
-                               'https://www.chemvantage.org/lti/',
-                               'https://edu-app-center.s3.amazonaws.com/uploads/production/lti_app/banner_image/chem_vantage.png',
-                               '89056',
-                                true,
-                                'basic-lti-launch-request'),
-
-          new LtiApplication('6',
-                             'KhanAcademy',
-                             '',
-                             'iFrame',
-                             '',
-                             '',
-                             'https://www.edu-apps.org/lti_public_resources/?tool_id=khan_academy',
-                             'https://edu-app-center.s3.amazonaws.com/uploads/production/lti_app/banner_image/pr_khan_academy.png',
-                             '90168',
-                              false,
-                              'basic-lti-launch-request'),
-             
-        ];
-        cb(appList, null);
+        $.ajax({
+            url: '../_api/SP.WebProxy.invoke',
+            type: 'POST',
+            data: JSON.stringify({
+                'requestInfo': {
+                    '__metadata': { 'type': 'SP.WebRequestInfo' },
+                    'Url': 'https://intropedustg.blob.core.windows.net/lti-app-catalog/lti-app-catalog.json',
+                    'Method': 'GET',
+                    'Headers': {
+                        'results': [{
+                            '__metadata': { 'type': 'SP.KeyValue' },
+                            'Key': 'Accept',
+                            'Value': 'application/json',
+                            "ValueType": "Edm.String"
+                        }]
+                    }
+                }
+            }),
+            headers: {
+                'Accept': 'application/json',
+                "Content-Type": "application/json;odata=verbose",
+                'X-RequestDigest': $("#__REQUESTDIGEST").val()
+            },
+            success: function (data) {
+                var appList = [];
+                var response = JSON.parse(data.Body);
+                if (response) {
+                    for (var ctr = 0; ctr < response.length; ctr++) {
+                        appList.push(
+                           new LtiApplication(response[ctr].id,
+                                              response[ctr].name,
+                                              response[ctr].description,
+                                              response[ctr].presentationTarget,
+                                              "",
+                                              "",
+                                              response[ctr].launchUrl,
+                                              response[ctr].logoUrl,
+                                              response[ctr].resourceId,
+                                              response[ctr].requiresKey == "0" ? false : true,
+                                              response[ctr].ltiMessageType)
+                        );
+                    }
+                }
+                cb(appList, null);
+            },
+            error: function (event, error) {
+                cb(null, error);
+            }
+        });
     }
 
     return {
