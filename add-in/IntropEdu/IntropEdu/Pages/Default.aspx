@@ -56,7 +56,7 @@
                     </a>
 
                     <a id="lnkEditAppList"
-                       ng-show="vm.hasEditPermission" 
+                       ng-show="vm.hasEditPermission"  
                        href="{{vm.editPageUrl}}"
                        title="Edit App List">
                         <i class="fa fa-pencil-square"></i>
@@ -69,7 +69,7 @@
 
                 <h5>Showing {{vm.appList.length}} Apps</h5>
                
-                <div class="row row-eq-height">
+               <%-- <div class="row row-eq-height">
                     <div class="col-md-2 col-sm-12 "
                         ng-if="vm.loadingData == false"
                         ng-repeat="eachApp in vm.appList">
@@ -88,7 +88,23 @@
 
                     </div>
 
-                </div>
+                </div>--%>
+
+                 <div ng-repeat="eachApp in vm.appList" ng-if="$index % 6 == 0 && vm.loadingData == false" class="row row-eq-height" >
+                      <div class="col-md-2 col-sm-12" ng-repeat="idx in [0,1,2,3,4,5]">
+                           <div class="appContainer" ng-show="vm.appList[idx+$parent.$index].id != null" >
+                            <a class="tileLink" href="{{vm.hostLtiPageUrl}}&appId={{vm.appList[idx+$parent.$index].id}}">
+                                <div class="text-center">
+                                    <img src="{{vm.appList[idx+$parent.$index].logoUrl}}" alt="{{vm.appList[idx+$parent.$index].name}}" style="width:98%;" />
+                                </div>
+                                <div class="appName">
+                                    {{vm.appList[idx+$parent.$index].name}}
+                                </div>
+                                <div class="appDescription">{{vm.appList[idx+$parent.$index].description}}</div>                                
+                            </a>
+                        </div>
+                      </div>
+                 </div>
 
 
             </div>
