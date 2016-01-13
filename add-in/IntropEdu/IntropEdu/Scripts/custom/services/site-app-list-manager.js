@@ -21,6 +21,7 @@ siteAppListMgr = function () {
     var listItemType = "SP.Data.LTIApplicationListListItem";
     var helper = new commons();
     var appWebUrl = helper.getAppWebUrl();
+    var hostWebUrl = helper.getHostWebUrl();
     var listName = helper.getAppListName();
 
     function createList(siteUrl, listTitle, description, cb) {
@@ -108,14 +109,14 @@ siteAppListMgr = function () {
             "AppName": app.name,
             "AppDescription": app.description,
             "AppId": app.id,
-			"AppPresentationTarget": app.launchPresentationDocumentTarget,
-			"AppKey": app.consumerKey,
-			"AppSecret": app.consumerSecret,
-			"AppLaunchUrl": app.url,
-			"AppLogoUrl": app.logoUrl,
-			"AppResourceId": app.resourceId,
-			"AppRequiresKey": app.requiresKey == false ? "0" : "1",
-			"AppLtiMessageType": app.ltiMessageType
+            "AppPresentationTarget": app.launchPresentationDocumentTarget,
+            "AppKey": app.consumerKey,
+            "AppSecret": app.consumerSecret,
+            "AppLaunchUrl": app.url,
+            "AppLogoUrl": app.logoUrl,
+            "AppResourceId": app.resourceId,
+            "AppRequiresKey": app.requiresKey == false ? "0" : "1",
+            "AppLtiMessageType": app.ltiMessageType
         };
 
         var apiEndPoint = appWebUrl +

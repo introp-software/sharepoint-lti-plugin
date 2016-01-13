@@ -57,8 +57,11 @@ commons = function () {
         path += anchor.host;
 
         var pathParts = anchor.pathname.split("/");
-        for (var ctr = 0; ctr < 2; ctr++) {
-            path += "/" + pathParts[ctr];
+        for (var ctr = 0, validPartCount = 0; ctr < pathParts.length && validPartCount < 2; ctr++) {
+            if (pathParts[ctr]) {
+                path += "/" + pathParts[ctr];
+                validPartCount++;
+            }
         }
         return path;
     }

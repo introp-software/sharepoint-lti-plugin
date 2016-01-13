@@ -66,86 +66,96 @@
 
 <%-- The markup and script in the following Content element will be placed in the <body> of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
-
-    <div>
-        <p id="message">
-            <!-- The following content will be replaced with the user name when you run the app - see App.js -->
-            initializing...Test changes
-        </p>
-    </div>
+    
     <div ng-app="app">
-        <div class="container" ng-controller="editSiteListCtrl">
-
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Application Details</h3>
-                </div>
-                <div class="panel-body">
-                   <table class="table">
-                       <tbody>
-                           <tr>
-                               <td>App Web</td>
-                               <td>{{vm.appWebUrl}}</td>
-                           </tr>
-                           <tr>
-                               <td>Host Web</td>
-                               <td>{{vm.hostWebUrl}}</td>
-                           </tr>
-                       </tbody>
-                   </table>
-                </div>
+        <div ng-controller="editSiteListCtrl">
+            <div>
+                <a id="lnkExitApp" 
+                   href="{{vm.hostWebUrl}}"
+                   title="Back to Site">
+                   <i class="fa fa-reply"></i>
+                </a>
+                <a id="lnkHome"
+                   href="{{vm.homePageUrl}}"
+                   title="Home">
+                    <i class="fa fa-home"></i>
+                </a>
+                <p id="message">
+                    <!-- The following content will be replaced with the user name when you run the app - see App.js -->
+                    initializing...Test changes
+                </p>
             </div>
 
+            <div class="container">
+                <div class="panel panel-primary" style="display:none">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Application Details</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>App Web</td>
+                                    <td>{{vm.appWebUrl}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Host Web</td>
+                                    <td>{{vm.hostWebUrl}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-            <h1>Configure Application List</h1>
-            <table id="tblSelectedApps" class="table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th>App Name</th>
-                        <th>App Description</th>
-                        <th>Consumer Key</th>
-                        <th>Consumer Secret</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-if="vm.loadingData == true">
-                        <td colspan="3" style="text-align: center">Loading</td>
-                    </tr>
-                    <tr ng-if="vm.loadingData == false" ng-repeat="eachApp in vm.appList">
-                        <td>
-                            <i class="fa fa-key fa-2" 
-                                style="color:darkgreen;cursor:pointer" 
-                                ng-if="eachApp.requiresKey == true"
-                                title="This tool requires consumer key and secret"></i>
-                        </td>
-                        <td>
-                            <input type="checkbox" ng-model="eachApp.newChecked" />
-                        </td>
-                        <td>{{eachApp.name}}</td>
-                        <td>{{eachApp.description}}</td>
-                        <td>
-                            <input type="text" ng-model="eachApp.consumerKey" />
-                        </td>
-                        <td>
-                            <input type="text" ng-model="eachApp.consumerSecret" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div>
-                <a class="btn btn-primary" id="lnkBack" style="text-decoration:none;color:#FFFFFF">Back To List</a>
-                <button type="button" 
-                    ng-click="fn.updateAppList()" 
-                    class="btn btn-primary"
-                    ng-disabled="vm.updatingList == true">
-                    Update App List
-                </button>
-                <i class="fa fa-refresh fa-spin" ng-if="vm.updatingList == true"></i>
+                <h1>Configure Application List</h1>
+                <table id="tblSelectedApps" class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>App Name</th>
+                            <th>App Description</th>
+                            <th>Consumer Key</th>
+                            <th>Consumer Secret</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-if="vm.loadingData == true">
+                            <td colspan="3" style="text-align: center">Loading</td>
+                        </tr>
+                        <tr ng-if="vm.loadingData == false" ng-repeat="eachApp in vm.appList">
+                            <td>
+                                <i class="fa fa-key fa-2"
+                                    style="color: darkgreen; cursor: pointer"
+                                    ng-if="eachApp.requiresKey == true"
+                                    title="This tool requires consumer key and secret"></i>
+                            </td>
+                            <td>
+                                <input type="checkbox" ng-model="eachApp.newChecked" />
+                            </td>
+                            <td>{{eachApp.name}}</td>
+                            <td>{{eachApp.description}}</td>
+                            <td>
+                                <input type="text" ng-model="eachApp.consumerKey" />
+                            </td>
+                            <td>
+                                <input type="text" ng-model="eachApp.consumerSecret" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <a class="btn btn-primary" id="lnkBack" style="text-decoration: none; color: #FFFFFF">Back To List</a>
+                    <button type="button"
+                        ng-click="fn.updateAppList()"
+                        class="btn btn-primary"
+                        ng-disabled="vm.updatingList == true">
+                        Update App List
+                    </button>
+                    <i class="fa fa-refresh fa-spin" ng-if="vm.updatingList == true"></i>
+                </div>
             </div>
         </div>
     </div>
-
 
 </asp:Content>

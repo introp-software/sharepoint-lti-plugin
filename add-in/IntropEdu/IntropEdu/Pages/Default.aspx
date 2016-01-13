@@ -11,7 +11,7 @@
     <script type="text/javascript" src="../Scripts/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
     <script type="text/javascript" src="/_layouts/15/sp.js"></script>
-    <script type="text/javascript" src="/_layouts/SP.RequestExecutor.js"></script>
+    <script type="text/javascript" src="/_layouts/15/SP.RequestExecutor.js"></script>
     <meta name="WebPartPageExpansion" content="full" />
 
     <!-- Add your CSS styles to the following file -->
@@ -48,13 +48,23 @@
         <div ng-app="app">
             <div ng-controller="defaultPageCtrl">
 
-                <div ng-show="vm.hasEditPermission" 
-                     style="border-bottom:1px solid #E3E3E3;padding:0 0 5px 0">
-                    <a id="lnkEditAppList"
-                        href="{{vm.editPageUrl}}"
-                        class="btn btn-warning"
-                        style="text-shadow: none;">Edit App List &nbsp; <i class="fa fa-cog"></i>
+                <div style="border-bottom:1px solid #E3E3E3;padding:0 0 5px 0">
+                    <a id="lnkExitApp"
+                        href="{{vm.hostWebUrl}}"
+                        title="Back to Site">
+                        <i class="fa fa-reply"></i>
                     </a>
+
+                    <a id="lnkEditAppList"
+                       ng-show="vm.hasEditPermission" 
+                       href="{{vm.editPageUrl}}"
+                       title="Edit App List">
+                        <i class="fa fa-pencil-square"></i>
+                    </a>
+                    <p id="message">
+                        <!-- The following content will be replaced with the user name when you run the app - see App.js -->
+                        initializing...
+                    </p>
                 </div>
 
                 <h5>Showing {{vm.appList.length}} Apps</h5>

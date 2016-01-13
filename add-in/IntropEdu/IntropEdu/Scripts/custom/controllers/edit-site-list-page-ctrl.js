@@ -29,6 +29,11 @@ app.controller('editSiteListCtrl', ['$scope', function ($scope) {
     vm.appWebUrl = helper.getAppWebUrl();
     vm.hostWebUrl = helper.getHostWebUrl();
 
+    vm.homePageUrl = "../pages/Default.aspx?SPAppWebUrl=" +
+                      encodeURIComponent(vm.appWebUrl) +
+                     "&SPHostUrl=" +
+                     encodeURIComponent(vm.hostWebUrl);
+
     var siteAppList = [];
     var masterAppList = [];
 
@@ -101,6 +106,8 @@ app.controller('editSiteListCtrl', ['$scope', function ($scope) {
                 if (seenAppId.indexOf(masterAppList[i].id) != -1) {
                     continue;
                 }
+                //Ignore the metadata of app instance from global list.
+                masterAppList[i].setMetadata(null);
                 masterAppList[i].oldChecked = false;
                 masterAppList[i].newChecked = false;
                 bindableAppList.push(masterAppList[i]);
@@ -140,7 +147,7 @@ app.controller('editSiteListCtrl', ['$scope', function ($scope) {
                 };
             });
         }
-        
+
     }
 
     function removeApp(index, appsToRemove, cb) {

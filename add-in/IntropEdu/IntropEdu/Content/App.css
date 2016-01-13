@@ -41,3 +41,18 @@
         overflow:hidden;
         padding:10px;
     }
+
+#s4-titlerow {
+    display:none!important;
+}
+
+#contentRow {
+    padding-top:0 !important;
+}
+
+#lnkExitApp, #lnkHome, #lnkEditAppList {
+    font-size:25px;
+    text-decoration:none;
+    margin-right:10px;
+    color:#0072c6;
+} 
