@@ -14,7 +14,7 @@
     color:#333333;
 } 
 
-/*.appTile {
+.appTile {
    border: solid 1px #E0E0E0;
    border-radius:4px;
    cursor:pointer;
@@ -40,7 +40,7 @@
         letter-spacing:1px;
         overflow:hidden;
         padding:10px;
-    }*/
+    }
 
 #s4-titlerow {
     display:none!important;
@@ -80,3 +80,7 @@ padding:10px;
         letter-spacing:1px;       
         padding:10px;
     }
+
+.frmsubmitted .ng-invalid {
+    border:1px solid red!important;
+}

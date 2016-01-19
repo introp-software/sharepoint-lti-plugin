@@ -86,6 +86,8 @@
                 </p>
             </div>
 
+            <div ng-form name="frmConfigureAppList" ng-class="{frmsubmitted: vm.frmSubmitted}">
+
             <div class="container">
                 <div class="panel panel-primary" style="display:none">
                     <div class="panel-heading">
@@ -117,6 +119,7 @@
                             <th>App Description</th>
                             <th>Consumer Key</th>
                             <th>Consumer Secret</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -136,10 +139,26 @@
                             <td>{{eachApp.name}}</td>
                             <td>{{eachApp.description}}</td>
                             <td>
-                                <input type="text" ng-model="eachApp.consumerKey" />
+                                <input 
+                                    ng-model="eachApp.consumerKey"
+                                    ng-required="eachApp.newChecked" 
+                                    ng-attr-type="{{eachApp.newChecked == true && eachApp.showSecret == true ? 'text' : 'password' }}" />
                             </td>
                             <td>
-                                <input type="text" ng-model="eachApp.consumerSecret" />
+                                <input type="text" 
+                                    ng-model="eachApp.consumerSecret" 
+                                    ng-required="eachApp.newChecked"
+                                    ng-attr-type="{{eachApp.newChecked == true && eachApp.showSecret == true ? 'text' : 'password' }}"/>
+                            </td>
+                            <td>
+                                <i class="fa fa-eye" 
+                                    ng-if="eachApp.showSecret == null || eachApp.showSecret == false"
+                                    style="cursor:pointer" 
+                                    ng-click="eachApp.showSecret = true" ></i>
+                                <i class="fa fa-eye-slash" 
+                                    ng-if="eachApp.showSecret == true"
+                                    style="cursor:pointer" 
+                                    ng-click="eachApp.showSecret = false"></i>
                             </td>
                         </tr>
                     </tbody>
@@ -150,11 +169,14 @@
                         ng-click="fn.updateAppList()"
                         class="btn btn-primary"
                         ng-disabled="vm.updatingList == true">
-                        Update App List
+                        Save
                     </button>
                     <i class="fa fa-refresh fa-spin" ng-if="vm.updatingList == true"></i>
                 </div>
             </div>
+        
+            </div>
+                        
         </div>
     </div>
 

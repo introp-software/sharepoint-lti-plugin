@@ -7,6 +7,12 @@
 var app = angular.module('app', []);
 app.controller('editSiteListCtrl', ['$scope', function ($scope) {
 
+    $(function () {
+        $("#frmUploadNew").tooltip({
+            selector: "[data-toggle=tooltip]"
+        });
+    });
+
     $scope.vm = {};
     $scope.fn = {};
 
@@ -183,6 +189,11 @@ app.controller('editSiteListCtrl', ['$scope', function ($scope) {
     });
 
     fn.updateAppList = function () {
+        $scope.vm.frmSubmitted = true;
+        if ($scope.frmConfigureAppList.$valid == false) {
+            return;
+        }
+
         var appsToRemove = [];
         var appsToAdd = [];
 
