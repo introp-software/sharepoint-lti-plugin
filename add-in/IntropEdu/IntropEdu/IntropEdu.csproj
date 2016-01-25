@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Pages\lti-app-webpart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{96713be9-d46d-48e9-834d-994ceb2e03b5}</SharePointProjectItemId>
+    </None>
     <None Include="Pages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3a51a9ce-de04-4041-bb69-134b5778bd1a}</SharePointProjectItemId>
     </None>
@@ -57,10 +60,15 @@
       <SharePointProjectItemId>{a4568401-10c8-4836-bf32-9d23c3d7e25b}</SharePointProjectItemId>
     </None>
     <Content Include="Pages\lti-app-host.aspx" />
+    <Content Include="Pages\lti-app-webpart\Elements.xml">
+      <OpcRelationship>feature-elementmanifest</OpcRelationship>
+    </Content>
+    <Content Include="Pages\lti-app-webpart.aspx" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\custom\controllers\default-page-ctrl.js" />
     <Content Include="Scripts\custom\controllers\edit-site-list-page-ctrl.js" />
     <Content Include="Scripts\custom\controllers\lti-app-host-page-ctrl.js" />
+    <Content Include="Scripts\custom\controllers\lti-app-web-part-ctrl.js" />
     <Content Include="Scripts\custom\services\common-functions.js" />
     <Content Include="Scripts\custom\services\global-app-list-manager.js" />
     <Content Include="Scripts\custom\services\lti-app-launcher.js" />
