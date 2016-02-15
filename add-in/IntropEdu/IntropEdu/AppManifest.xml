@@ -7,8 +7,12 @@
      SharePointMinVersion="16.0.0.0"
 >
   <Properties>
-    <Title>IntropEdu</Title>
+    <Title>SharepointLTIConsumer</Title>
     <StartPage>~appWebUrl/Pages/Default.aspx?{StandardTokens}</StartPage>
+    <SupportedLocales>
+      <SupportedLocale CultureName="en" />
+      <SupportedLocale CultureName="en-US" />
+    </SupportedLocales>
   </Properties>
 
   <AppPrincipal>
