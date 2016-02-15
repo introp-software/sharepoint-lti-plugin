@@ -70,6 +70,7 @@
     <None Include="Pages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3a51a9ce-de04-4041-bb69-134b5778bd1a}</SharePointProjectItemId>
     </None>
+    <Content Include="Images\LTIConsumer.png" />
     <Content Include="Pages\edit-site-list.aspx" />
     <Content Include="Pages\Elements.xml" />
     <Content Include="Pages\Default.aspx" />
