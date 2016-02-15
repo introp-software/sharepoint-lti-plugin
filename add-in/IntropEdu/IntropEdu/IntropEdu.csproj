@@ -10,11 +10,11 @@
     <RootNamespace>IntropEdu</RootNamespace>
     <AssemblyName>IntropEdu</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetOfficeVersion>16.0</TargetOfficeVersion>
+    <TargetOfficeVersion>16.1</TargetOfficeVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
-    <MinimumOfficeToolsVersion>12.1</MinimumOfficeToolsVersion>
+    <MinimumOfficeToolsVersion>12.2</MinimumOfficeToolsVersion>
     <IncludeAssemblyInPackage>False</IncludeAssemblyInPackage>
     <ProjectMode>SharePointApp</ProjectMode>
     <AppFeaturePartId>{54dd9732-c32d-4a56-a31a-f10f3357fc47}</AppFeaturePartId>
@@ -22,6 +22,11 @@
     <WorkflowPartId>{9869ade1-b684-4ba0-a1f3-161511c075d1}</WorkflowPartId>
     <CspkgPartId>{3901e03b-4c74-4f94-b7ee-64714d8a9ef9}</CspkgPartId>
     <SqlPackagePartId>{a4568401-10c8-4836-bf32-9d23c3d7e25b}</SqlPackagePartId>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>12.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
