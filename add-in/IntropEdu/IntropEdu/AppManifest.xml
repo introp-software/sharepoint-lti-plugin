@@ -15,10 +15,9 @@
     <Internal />
   </AppPrincipal>
   <AppPermissionRequests>
-    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="FullControl" />
-    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="FullControl" />
-    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="FullControl" />
-    <AppPermissionRequest Scope="http://sharepoint/content/tenant" Right="FullControl" />
+    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web/list" Right="Manage" />
+    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="Manage" />
+    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="Manage" />
   </AppPermissionRequests>
   <RemoteEndpoints>
     <RemoteEndpoint Url="https://intropedustg.blob.core.windows.net/lti-app-catalog/lti-app-catalog.json" />

@@ -83,6 +83,17 @@ commons = function () {
         return "LTIApplicationList";
     };
 
+    var wrapErr = function (jqXhr) {
+        var err = { code: null, msg: null };
+        if (jqXhr != null && jqXhr.status != null && jqXhr.statusText != null) {
+            err.code = jqXhr.status;
+            err.msg = jqXhr.statusText;
+        } else {
+            return null;
+        }
+        return err;
+    }
+
     return {
         getHostWebUrl: getHostWebUrl,
         getAppWebUrl: getAppWebUrl,
@@ -90,6 +101,7 @@ commons = function () {
         getSiteCollectionUrl: getSiteCollectionUrl,
         isHostASiteCollection: isHostASiteCollection,
         generateUUID: generateUUID,
-        getAppListName: getAppListName
+        getAppListName: getAppListName,
+        wrapErr: wrapErr
     };
 }

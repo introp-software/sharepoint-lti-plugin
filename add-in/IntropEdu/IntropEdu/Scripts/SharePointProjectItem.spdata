@@ -19,5 +19,6 @@
     <ProjectItemFile Source="custom\services\lti-app-launcher.js" Target="Scripts\custom\services\" Type="ElementFile" />
     <ProjectItemFile Source="custom\services\user-permission.js" Target="Scripts\custom\services\" Type="ElementFile" />
     <ProjectItemFile Source="custom\controllers\lti-app-web-part-ctrl.js" Target="Scripts\custom\controllers\" Type="ElementFile" />
+    <ProjectItemFile Source="async.min.js" Target="Scripts\" Type="ElementFile" />
   </Files>
 </ProjectItem>

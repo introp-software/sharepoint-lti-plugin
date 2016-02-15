@@ -30,6 +30,7 @@
 
     <script type="text/javascript" src="../Scripts/custom/services/models.js"></script>
     <script type="text/javascript" src="../Scripts/angular.js"></script>
+    <script type="text/javascript" src="../Scripts/async.min.js"></script>
     <script type="text/javascript" src="../Scripts/custom/services/common-functions.js"></script>
     <script type="text/javascript" src="../Scripts/custom/services/global-app-list-manager.js"></script>
     <script type="text/javascript" src="../Scripts/custom/services/site-app-list-manager.js"></script>
@@ -89,24 +90,6 @@
                     </div>
 
                 </div>
-
-                <%-- 
-                 <div ng-repeat="eachApp in vm.appList" ng-if="$index % 6 == 0 && vm.loadingData == false" class="row" >
-                      <div class="col-md-2 col-sm-12" ng-repeat="idx in [0,1,2,3,4,5]">
-                           <div class="appContainer" ng-show="vm.appList[idx+$parent.$index].id != null" >
-                            <a class="tileLink" href="{{vm.hostLtiPageUrl}}&appId={{vm.appList[idx+$parent.$index].id}}">
-                                <div class="text-center">
-                                    <img src="{{vm.appList[idx+$parent.$index].logoUrl}}" alt="{{vm.appList[idx+$parent.$index].name}}" style="width:98%;" />
-                                </div>
-                                <div class="appName">
-                                    {{vm.appList[idx+$parent.$index].name}}
-                                </div>
-                                <div class="appDescription">{{vm.appList[idx+$parent.$index].description}}</div>                                
-                            </a>
-                        </div>
-                      </div>
-                 </div>
-                --%>
 
             </div>
         </div>

@@ -45,7 +45,9 @@ siteAppListMgr = function () {
                 cb(data.d.Id, null);
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                cb(null, errorThrown);
+                var err = helper.wrapErr(jqXHR);
+                err = err == null ? errorThrown : err;
+                cb(null, err);
             }
         });
     }
@@ -211,6 +213,34 @@ siteAppListMgr = function () {
         });
     }
 
+    var exists = function (siteUrl, cb) {
+        var listTitle = helper.getAppListName();
+        jQuery.ajax({
+            url: appWebUrl + "/_api/SP.AppContextSite(@target)/web/lists/GetByTitle('" +
+                listTitle +
+                "')?@target='" + siteUrl + "'",
+            type: "GET",
+            headers: {
+                "accept": "application/json;odata=verbose",
+                "content-type": "application/json;odata=verbose",
+                "X-RequestDigest": $("#__REQUESTDIGEST").val()
+            },
+            success: function (data, textStatus, jqXHR) {
+                //data.d.id -> contains guid for the list
+                if (data == null || data.d == null) {
+                    cb(false, null);
+                } else {
+                    cb(true, null);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                var err = helper.wrapErr(jqXHR);
+                err = err == null ? errorThrown : err;
+                cb(null, err);
+            }
+        });
+    }
+
     var getItemById = function (itemId, siteUrl, cb) {
         getItems(siteUrl, function (items, err) {
             if (err) {
@@ -271,6 +301,7 @@ siteAppListMgr = function () {
 
     return {
         create: create,
+        exists: exists,
         getItems: getItems,
         getItemById: getItemById,
         addApp: addApp,
