@@ -42,6 +42,10 @@
         padding:10px;
     }
 
+    .appTile .appImage {
+        width:95%;
+    }
+
 #s4-titlerow {
     display:none!important;
 }
@@ -56,6 +60,10 @@
     margin-right:10px;
     color:#0072c6;
 } 
+
+#lnkEditAppList {
+    color:white !important;
+}
 
 .appName {
         text-align:center;
@@ -83,4 +91,16 @@ padding:10px;
 
 .frmsubmitted .ng-invalid {
     border:1px solid red!important;
+}
+
+.jumbotron {
+    padding-left:48px;
+}
+
+    .jumbotron .jumbotronText {
+        font-size: 18px !important;
+    }
+
+.jumbotron .alert-danger {
+    margin-right: 48px;
 }

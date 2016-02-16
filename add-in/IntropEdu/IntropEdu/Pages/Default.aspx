@@ -49,23 +49,34 @@
         <div ng-app="app">
             <div ng-controller="defaultPageCtrl">
 
-                <div style="border-bottom:1px solid #E3E3E3;padding:0 0 5px 0">
+                <div style="border-bottom: 1px solid #E3E3E3; padding: 0 0 5px 0">
                     <a id="lnkExitApp"
                         href="{{vm.hostWebUrl}}"
                         title="Back to Site">
                         <i class="fa fa-reply"></i>
                     </a>
+                </div>
 
-                    <a id="lnkEditAppList"
-                       ng-show="vm.hasEditPermission"  
-                       href="{{vm.editPageUrl}}"
-                       title="Edit App List">
-                        <i class="fa fa-pencil-square"></i>
-                    </a>
-                    <p id="message">
+                <div class="jumbotron">
+                    <h3 id="message">
                         <!-- The following content will be replaced with the user name when you run the app - see App.js -->
                         initializing...
+                    </h3>
+
+                    <p class="jumbotronText">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+
+                    <p>
+                        <a class="btn btn-primary btn-lg"
+                            id="lnkEditAppList"
+                            ng-show="vm.hasEditPermission"
+                            href="{{vm.editPageUrl}}"
+                            title="Edit App List">Manage Apps
+                        </a>
                     </p>
+
+                    <div class="alert alert-danger" ng-hide="vm.hasEditPermission">
+                        You don't have enough permission. Please get in touch with System Admin.  
+                    </div>
                 </div>
 
                 <h5>Showing {{vm.appList.length}} Apps</h5>
@@ -74,10 +85,10 @@
                     <div class="col-md-2 col-sm-12 "
                         ng-if="vm.loadingData == false"
                         ng-repeat="eachApp in vm.appList">
-                        <div style="width:95%;" class="appTile">
+                        <div style="width: 95%;" class="appTile">
                             <a class="tileLink" href="{{vm.hostLtiPageUrl}}&appId={{eachApp.id}}">
                                 <div class="text-center">
-                                    <img src="{{eachApp.logoUrl}}" />
+                                    <img class="appImage" src="{{eachApp.logoUrl}}" />
                                 </div>
                                 <div class="appName">
                                     {{eachApp.name}}
