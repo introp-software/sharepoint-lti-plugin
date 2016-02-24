@@ -55,28 +55,34 @@
                         title="Back to Site">
                         <i class="fa fa-reply"></i>
                     </a>
+                    <a class="btn btn-primary btn-lg"
+                       id="lnkEditAppList"
+                       ng-show="vm.hasEditPermission"
+                       href="{{vm.editPageUrl}}"
+                       title="Edit App List">
+                       Manage LTI Apps
+                    </a>
                 </div>
 
-                <div class="jumbotron">
+                <div class="jumbotron" ng-show="vm.appList.length <= 0">
                     <h3 id="message">
                         <!-- The following content will be replaced with the user name when you run the app - see App.js -->
                         initializing...
                     </h3>
 
-                    <p class="jumbotronText">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-
-                    <p>
-                        <a class="btn btn-primary btn-lg"
-                            id="lnkEditAppList"
-                            ng-show="vm.hasEditPermission"
-                            href="{{vm.editPageUrl}}"
-                            title="Edit App List">Manage Apps
-                        </a>
+                    <p class="jumbotronText"
+                        ng-show="vm.hasEditPermission == true">
+                        No applications are configured for this site. Click on Manage Apps button to add LTI applications to this site. 
+                        <br />
+                        Once LTI applications are configured students can see them and perform activities inside LTI applications.
+                        <br />
+                        For more information on LTI apps visit <a href="https://www.imsglobal.org/activity/learning-tools-interoperability" target="_blank">IMS Global</a>
                     </p>
 
-                    <div class="alert alert-danger" ng-hide="vm.hasEditPermission">
-                        You don't have enough permission. Please get in touch with System Admin.  
-                    </div>
+                    <p class="jumbotronText" 
+                        ng-show="vm.hasEditPermission == false">
+                        No LTI applications are configured for this site. Please get in touch with Teacher or School admin to add LTI applications to this site.  
+                    </p>
                 </div>
 
                 <h5>Showing {{vm.appList.length}} Apps</h5>

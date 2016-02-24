@@ -15,7 +15,7 @@ app.controller('defaultPageCtrl', ['$scope', function ($scope) {
     $scope.vm.loadingData = true;
     $scope.vm.err = "";
     $scope.vm.hostLtiPageUrl = "";
-    $scope.vm.hasEditPermission = false;
+    $scope.vm.hasEditPermission = null;
 
     $scope.fn = {};
 

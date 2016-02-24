@@ -26,6 +26,7 @@
 
     <script type="text/javascript" src="../Scripts/custom/services/models.js"></script>
     <script type="text/javascript" src="../Scripts/angular.js"></script>
+    <script type="text/javascript" src="../Scripts/async.min.js"></script>
     <script type="text/javascript" src="../Scripts/custom/services/common-functions.js"></script>
     <script type="text/javascript" src="../Scripts/custom/services/global-app-list-manager.js"></script>
     <script type="text/javascript" src="../Scripts/custom/services/site-app-list-manager.js"></script>
