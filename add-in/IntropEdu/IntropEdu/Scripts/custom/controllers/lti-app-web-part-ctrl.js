@@ -12,6 +12,7 @@ app.controller('ltiAppWebPartCtrl', ['$scope', function ($scope) {
     $scope.vm.hasEditPermission = false;
     $scope.vm.errMsg = null;
     $scope.vm.userInfo = null;
+    $scope.vm.isToolConfigured = true;
 
     $scope.fn = {};
 
@@ -59,10 +60,16 @@ app.controller('ltiAppWebPartCtrl', ['$scope', function ($scope) {
             else {
                 $scope.vm.hasEditPermission = hasPerm;
             }
+
+            if (toolName == null || toolName == "" || toolName == "-") {
+                $scope.vm.isToolConfigured = false;
+            }
+            else {
+                getFormDigest(function () {
+                    loadTool();
+                });
+            }
             $scope.$apply();
-            getFormDigest(function () {
-                loadTool();
-            });
         });
     }
 

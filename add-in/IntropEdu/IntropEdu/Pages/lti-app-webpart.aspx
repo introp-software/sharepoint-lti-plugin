@@ -27,7 +27,7 @@
     <script type="text/javascript"
         src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../Scripts/App.js"></script>
-
+    <script type="text/javascript" src="../Scripts/async.min.js"></script>
     <script type="text/javascript" src="../Scripts/custom/services/models.js"></script>
     <script type="text/javascript" src="../Scripts/custom/services/common-functions.js"></script>
     <script type="text/javascript" src="../Scripts/angular.js"></script>
@@ -35,6 +35,7 @@
     <script type="text/javascript" src="../Scripts/custom/services/lti-app-launcher.js"></script>
     <script type="text/javascript" src="../Scripts/custom/services/user-permission.js"></script>
     <script type="text/javascript" src="../Scripts/custom/services/global-app-list-manager.js"></script>
+    <script type="text/javascript" src="../Scripts/custom/services/site-app-list-manager.js"></script>
     <script type="text/javascript" src="../Scripts/custom/controllers/lti-app-web-part-ctrl.js"></script>
     
     <script type="text/javascript">
@@ -68,6 +69,20 @@
                 {{vm.errMsg}}
             </div>
             <div class="container">
+                <div ng-if="vm.isToolConfigured == false">
+                    <h2>No LTI app configured</h2>
+                    <br />
+                    <h3>Please use one of the following values for tool name and enter your key and secert
+                        in the settings panel to configure LTI app for this app part.
+                    </h3>
+                    <br />
+                    <ul>
+                        <li>YouTube</li>
+                        <li>Trello</li>
+                        <li>OfficeMix</li>
+                        <li>ChemVantage</li>
+                    </ul>
+                </div>
                 <div id="fmrPlaceholder"></div>
                 <iframe name="ifrm_tool1" style="width: 100%; height: 600px;"></iframe>
             </div>
