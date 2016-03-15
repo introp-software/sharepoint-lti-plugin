@@ -22,7 +22,7 @@ app.controller('editSiteListCtrl', ['$scope', function ($scope) {
 
     var hostWebUrl = helper.getHostWebUrl();
     var siteListMgr = new siteAppListMgr();
-    var globalListMgr = new globalAppListMgr
+    var globalListMgr = new globalAppListMgr();
 
     vm.err = "";
     vm.loadingData = false;
