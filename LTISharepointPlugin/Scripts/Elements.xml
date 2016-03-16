@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Scripts">
+    <File Path="Scripts\App.js" Url="Scripts/App.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-1.9.1.min.map" Url="Scripts/jquery-1.9.1.min.map" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-1.9.1.min.js" Url="Scripts/jquery-1.9.1.min.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-1.9.1.js" Url="Scripts/jquery-1.9.1.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-1.9.1.intellisense.js" Url="Scripts/jquery-1.9.1.intellisense.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\angular.js" Url="Scripts/angular.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\custom\controllers\default-page-ctrl.js" Url="Scripts/custom/controllers/default-page-ctrl.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\custom\controllers\edit-site-list-page-ctrl.js" Url="Scripts/custom/controllers/edit-site-list-page-ctrl.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\custom\services\common-functions.js" Url="Scripts/custom/services/common-functions.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\custom\services\global-app-list-manager.js" Url="Scripts/custom/services/global-app-list-manager.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\custom\services\models.js" Url="Scripts/custom/services/models.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\custom\services\site-app-list-manager.js" Url="Scripts/custom/services/site-app-list-manager.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\custom\controllers\lti-app-host-page-ctrl.js" Url="Scripts/custom/controllers/lti-app-host-page-ctrl.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\custom\services\oauth-signature.js" Url="Scripts/custom/services/oauth-signature.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\custom\services\lti-app-launcher.js" Url="Scripts/custom/services/lti-app-launcher.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\custom\services\user-permission.js" Url="Scripts/custom/services/user-permission.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\custom\controllers\lti-app-web-part-ctrl.js" Url="Scripts/custom/controllers/lti-app-web-part-ctrl.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\async.min.js" Url="Scripts/async.min.js" ReplaceContent="TRUE" />
+  </Module>
+</Elements>

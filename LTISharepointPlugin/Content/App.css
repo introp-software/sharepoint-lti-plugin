@@ -1,0 +1,107 @@
+﻿/* Place custom styles below */
+.dvBorder{
+    
+}
+
+.tileLink,
+.tileLink:hover,
+.tileLink:visited,
+.tileLink:active,
+.tileLink:focus
+{
+    text-decoration:none !important;
+    outline:none;
+    color:#333333;
+} 
+
+.appTile {
+   border: solid 1px #E0E0E0;
+   border-radius:4px;
+   cursor:pointer;
+   color:#333333;
+   padding:5px;
+   margin:0 auto;
+}
+
+    .appTile .appName {
+        text-align:center;
+        font-size:17px;
+        height:50px;
+        line-height:50px;
+        border:1px solid #E0E0E0;
+        border-right:none;
+        border-left:none;
+    }
+
+    .appTile .appDescription {
+        text-align:left;
+        font-size:15px;
+        height:158px;
+        letter-spacing:1px;
+        overflow:hidden;
+        padding:10px;
+    }
+
+    .appTile .appImage {
+        width:95%;
+    }
+
+#s4-titlerow {
+    display:none!important;
+}
+
+#contentRow {
+    padding-top:0 !important;
+}
+
+#lnkExitApp, #lnkHome, #lnkEditAppList {
+    font-size:25px;
+    text-decoration:none;
+    margin-right:10px;
+    color:#0072c6;
+} 
+
+#lnkEditAppList {
+    color:white !important;
+    font-size:20px !important;
+}
+
+.appName {
+        text-align:center;
+        font-size:17px;
+        height:50px;
+        line-height:50px;
+        border:1px solid #E0E0E0;
+        border-right:none;
+        border-left:none;
+    }
+
+.appContainer {
+width: 95%; 
+border:solid 1px #E0E0E0; 
+border-radius:4px;
+padding:10px;
+}
+
+.appDescription {
+        text-align:left;
+        font-size:15px;     
+        letter-spacing:1px;       
+        padding:10px;
+    }
+
+.frmsubmitted .ng-invalid {
+    border:1px solid red!important;
+}
+
+.jumbotron {
+    padding-left:48px;
+}
+
+    .jumbotron .jumbotronText {
+        font-size: 18px !important;
+    }
+
+.jumbotron .alert-danger {
+    margin-right: 48px;
+}
