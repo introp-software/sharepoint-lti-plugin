@@ -70,10 +70,10 @@
             </div>
             <div class="container">
                 <div ng-if="vm.isToolConfigured == false">
-                    <h2>No LTI app configured</h2>
+                    <h2>No LTI™ app configured</h2>
                     <br />
                     <h3>Please use one of the following values for tool name and enter your key and secert
-                        in the settings panel to configure LTI app for this app part.
+                        in the settings panel to configure LTI™ app for this app part.
                     </h3>
                     <br />
                     <ul>

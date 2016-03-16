@@ -7,7 +7,7 @@
      SharePointMinVersion="16.0.0.0"
 >
   <Properties>
-    <Title>SharepointLTIConsumer</Title>
+    <Title> Learning Tools Interoperability (LTI) Plugin for SharePoint</Title>
     <StartPage>~appWebUrl/Pages/Default.aspx?{StandardTokens}</StartPage>
     <SupportedLocales>
       <SupportedLocale CultureName="en" />

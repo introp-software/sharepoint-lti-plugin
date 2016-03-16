@@ -34,6 +34,13 @@ commons = function () {
         anchor.href = hostUrl;
 
         var path = anchor.pathname;
+
+        //If path name is / then it means that user is accessing the app
+        //from root - which is a site collection as well.
+        if (path == "/" || path == "") {
+            return true;
+        }
+
         var pathParts = path.split("/");
 
         //A site collection is @ the top level after /sites/ path
@@ -46,6 +53,10 @@ commons = function () {
             }
         }
         return validPathPartCount == 2;
+    }
+
+    var isRootSite = function () {
+        var hostUrl = getHostWebUrl();
     }
 
     var getSiteCollectionUrl = function () {

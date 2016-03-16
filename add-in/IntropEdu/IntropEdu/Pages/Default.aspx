@@ -60,7 +60,7 @@
                        ng-show="vm.hasEditPermission"
                        href="{{vm.editPageUrl}}"
                        title="Edit App List">
-                       Manage LTI Apps
+                       Manage LTI™ Apps
                     </a>
                 </div>
 
@@ -72,16 +72,16 @@
 
                     <p class="jumbotronText"
                         ng-show="vm.hasEditPermission == true">
-                        No applications are configured for this site. Click on Manage Apps button to add LTI applications to this site. 
+                        No applications are configured for this site. Click on Manage Apps button to add LTI™ applications to this site. 
                         <br />
-                        Once LTI applications are configured students can see them and perform activities inside LTI applications.
+                        Once LTI™ applications are configured students can see them and perform activities inside LTI™ applications.
                         <br />
-                        For more information on LTI apps visit <a href="https://www.imsglobal.org/activity/learning-tools-interoperability" target="_blank">IMS Global</a>
+                        For more information on LTI™ apps visit <a href="https://www.imsglobal.org/activity/learning-tools-interoperability" target="_blank">IMS Global</a>
                     </p>
 
                     <p class="jumbotronText" 
                         ng-show="vm.hasEditPermission == false">
-                        No LTI applications are configured for this site. Please get in touch with Teacher or School admin to add LTI applications to this site.  
+                        No LTI™ applications are configured for this site. Please get in touch with Teacher or School admin to add LTI™ applications to this site.  
                     </p>
                 </div>
 

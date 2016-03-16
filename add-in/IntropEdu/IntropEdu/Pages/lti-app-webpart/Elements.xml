@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ClientWebPart Name="lti-app-webpart" Title="lti-app-webpart" Description="This web part allows user to embed LTI applications on a SharePoint page" DefaultWidth="300" DefaultHeight="200">
+  <ClientWebPart 
+    Name="lti-app-webpart" 
+    Title="Learning Tools Interoperability™ (LTI™) Plugin for SharePoint" 
+    Description="The Learning Tools Interoperability™ (LTI™) Plugin for SharePoint let’s educators and admins embed any LTI™ app or educational resource from www.eduappcenter.com into a SharePoint site." 
+    DefaultWidth="400" 
+    DefaultHeight="200">
 
     <!-- Content element identifies the location of the page that will render inside the client web part
          Properties are referenced on the query string using the pattern _propertyName_

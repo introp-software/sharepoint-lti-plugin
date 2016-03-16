@@ -109,7 +109,7 @@
                     </div>
                 </div>
 
-                <h1>Configure Application List</h1>
+                <h1>Configure LTI™ Application List</h1>
                 <table id="tblSelectedApps" class="table">
                     <thead>
                         <tr>
